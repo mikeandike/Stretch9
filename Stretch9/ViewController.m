@@ -17,7 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSArray *testArray = @[@-81, @-293, @-9, @-881, @-82, @-42];
+    NSLog(@"%@", [self returnHighestVal:testArray]);
+    
+    
+    
 }
+
+-(NSNumber *)returnHighestVal:(NSArray *)arr{
+    NSInteger highest = [arr[0] integerValue];
+    for (int i = 0; i<arr.count; i++) {
+        float val = [arr[i] integerValue];
+        if (val > highest) {
+            highest = val;
+        }
+    }
+    
+    return [NSNumber numberWithFloat:highest];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
